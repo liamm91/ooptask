@@ -5,10 +5,10 @@ namespace color
     public class Color
     {
         // instance variables
-        private int _red;
-        private int _green;
-        private int _blue;
-        private float _alpha;
+        protected int _red;
+        protected int _green;
+        protected int _blue;
+        protected float _alpha;
 
         // constructors
         // RGB no alpha

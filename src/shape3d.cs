@@ -7,9 +7,9 @@ namespace shape3d
     public class Shape3d
     {
         // variables
-        private String _shape;
-        private Color _color;
-        private Vector3 _position;
+        protected String _shape;
+        protected Color _color;
+        protected Vector3 _position;
 
         // constructors
         public Shape3d(String shape, Color color, Vector3 pos)

@@ -5,9 +5,9 @@ namespace vector3
     public class Vector3
     {
         // instance variables
-        private float _x;
-        private float _y;
-        private float _z;
+        protected float _x;
+        protected float _y;
+        protected float _z;
 
         // constructors
         public Vector3(float x, float y, float z)
