@@ -25,7 +25,7 @@ namespace shape3d
         // remove function, to delete set var to 'null'
 
         // getters/setters
-        public String shape
+        public virtual String shape
         {
             get
             {
@@ -37,7 +37,7 @@ namespace shape3d
             }
         }
 
-        public Color color
+        public virtual Color color
         {
             get
             {
@@ -49,7 +49,7 @@ namespace shape3d
             }
         }
 
-        public Vector3 position
+        public virtual Vector3 position
         {
             get
             {
