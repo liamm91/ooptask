@@ -30,7 +30,7 @@ namespace vector3
         }
 
         // getter/setter
-        public float[] position {
+        public virtual float[] position {
             get
             {
                 float[] temp = { _x, _y, _z };
@@ -43,7 +43,7 @@ namespace vector3
             }
         }
 
-        public float x
+        public virtual float x
         {
             get
             {
@@ -58,7 +58,7 @@ namespace vector3
             }
         }
 
-        public float y
+        public virtual float y
         {
             get
             {
@@ -73,7 +73,7 @@ namespace vector3
             }
         }
 
-        public float z
+        public virtual float z
         {
             get
             {
