@@ -10,6 +10,8 @@ namespace shape3d
         protected String _shape;
         protected Color _color;
         protected Vector3 _position;
+        protected double _volume;
+        protected double _surfacearea;
 
         // constructors
         public Shape3d(String shape, Color color, Vector3 pos)
@@ -69,5 +71,8 @@ namespace shape3d
                 _position = value;
             }
         }
+
+        public virtual double volume {get => this._volume;}
+        public virtual double surfacearea {get => this._surfacearea;}
     }
 }

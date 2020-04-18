@@ -7,10 +7,6 @@ namespace dodecahedron
     class Dodecahedron : Shape3d
     {
         // variables
-        // calculated
-        private double _volume;
-        private double _surfacearea;
-
         // given
         private double _edgelength;
 
@@ -69,8 +65,6 @@ namespace dodecahedron
         }
         
         // getters and setters
-        public double volume {get => this._volume;}
-        public double surfacearea {get => this._surfacearea;}
         public override String shape {get => this._shape;}
         public double edge_length
         {

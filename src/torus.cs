@@ -8,8 +8,6 @@ namespace torus
     {
         // variables
         // calculated
-        private double _volume;
-        private double _surfacearea;
         private double _aspectratio;
 
         // given in constructor
@@ -113,7 +111,5 @@ namespace torus
         }
 
         public override String shape {get => this._shape;}
-        public double volume {get => this._volume;}
-        public double surfacearea {get => this._surfacearea;}
     }
 }
