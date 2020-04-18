@@ -22,11 +22,11 @@ namespace triangularprism
 
 
         // constructors
-        public triangularprism (double _base, double latside1, double latside2, double length, Color color)
+        public triangularprism (double _base, double b, double c, double length, Color color)
         {
             this._base = _base;
-            this._b = latside1;
-            this._c = latside2;
+            this._b = b;
+            this._c = c;
             this._l = length;
             this._color = color;
 
@@ -34,11 +34,11 @@ namespace triangularprism
             _update();
         }
 
-        public triangularprism (double _base, double latside1, double latside2, double length)
+        public triangularprism (double _base, double b, double c, double length)
         {
             this._base = _base;
-            this._b = latside1;
-            this._c = latside2;
+            this._b = b;
+            this._c = c;
             this._l = length;
             this._color = presets.Green;
             
@@ -142,5 +142,65 @@ namespace triangularprism
         public double basearea {get => this._basearea;}
         public double lateralsurfacearea {get => this._latsurfacearea;}
         public override String shape {get => this._shape;}
+        public double prismbase 
+        {
+            get
+            {
+                return this._base;
+            }
+            set
+            {
+                this._base = value;
+                _update();
+            }
+        }
+        public double b 
+        {
+            get
+            {
+                return this._b;
+            }
+            set
+            {
+                this._b = value;
+                _update();
+            }
+        }
+        public double c 
+        {
+            get
+            {
+                return this._c;
+            }
+            set
+            {
+                this._c = value;
+                _update();
+            }
+        }
+        public double height 
+        {
+            get
+            {
+                return this._h;
+            }
+            set
+            {
+                this._h = value;
+                _update();
+            }
+        }
+        public double length 
+        {
+            get
+            {
+                return this._l;
+            }
+            set
+            {
+                this._l = value;
+                _update();
+            }
+        }
     }
 }
