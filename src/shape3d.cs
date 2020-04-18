@@ -37,7 +37,7 @@ namespace shape3d
         {
             Console.WriteLine("This is a {0}", this._shape);
             Console.WriteLine("This with a color of {0}", this._color);
-            Console.WriteLine("Located at {0]", this._position);
+            Console.WriteLine("Located at {0}", this._position);
         }
 
         // getters/setters
