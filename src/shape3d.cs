@@ -24,6 +24,15 @@ namespace shape3d
 
         // remove function, to delete set var to 'null'
 
+        // methods
+
+        public virtual void draw()
+        {
+            Console.WriteLine("This is a {0}", this._shape);
+            Console.WriteLine("This with a color of {0}", this._color);
+            Console.WriteLine("Located at {0]", this._position);
+        }
+
         // getters/setters
         public virtual String shape
         {

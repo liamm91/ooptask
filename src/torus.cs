@@ -76,7 +76,7 @@ namespace torus
             }
         }
 
-        public void draw(){
+        public override void draw(){
             Console.WriteLine("This is a {0}", this._shape);
             Console.WriteLine("This torus has a color of {0}", this._color);
             Console.WriteLine("The major radius is {0} and the minor radius is {1}", this._majorradius, this._minorradius);

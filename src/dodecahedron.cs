@@ -52,7 +52,7 @@ namespace dodecahedron
             this._volume = ((15 + (7 * Math.Sqrt(5))) / 4) * (Math.Pow(this._edgelength, 3));
         }
 
-        public void draw()
+        public override void draw()
         {
             Console.WriteLine("This is a {0}", this._shape);
             Console.WriteLine("This dodecahedron has a color of {0}", this._color);

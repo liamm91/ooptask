@@ -128,7 +128,7 @@ namespace triangularprism
             }
         }
 
-        public void draw()
+        public override void draw()
         {
             Console.WriteLine("This is a {0}", this._shape);
             Console.WriteLine("This prism has a color of {0}", this._color);
