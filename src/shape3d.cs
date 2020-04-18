@@ -22,7 +22,12 @@ namespace shape3d
         }
 
         // empty constructor
-        public Shape3d() { }
+        public Shape3d() 
+        {
+            this._shape = "literal universe with infinte dimensions";
+            this._color = new Color(255, 0, 255);
+            this._position = new Vector3(-11834578134, 1237521358234052146, 69);
+        }
 
         // remove function, to delete set var to 'null'
 
