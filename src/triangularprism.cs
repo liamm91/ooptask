@@ -4,7 +4,7 @@ using color;
 
 namespace triangularprism
 {
-    class triangularprism : Shape3d
+    class Triangularprism : Shape3d
     {
         // variables
         // calculated
@@ -24,7 +24,7 @@ namespace triangularprism
         // constructors
         // using _base because base is a keyword/function
         // some constructors have additional methods to calculate the other sides of the prism for further calculation
-        public triangularprism (double _base, double b, double c, double length, Color color)
+        public Triangularprism (double _base, double b, double c, double length, Color color)
         {
             this._base = _base;
             this._b = b;
@@ -36,7 +36,7 @@ namespace triangularprism
             _update();
         }
 
-        public triangularprism (double _base, double b, double c, double length)
+        public Triangularprism (double _base, double b, double c, double length)
         {
             this._base = _base;
             this._b = b;
@@ -48,7 +48,7 @@ namespace triangularprism
             _update();
         }
 
-        public triangularprism (double _base, double height, double length, Color color)
+        public Triangularprism (double _base, double height, double length, Color color)
         {
             this._base = _base;
             this._h = height;
@@ -59,7 +59,7 @@ namespace triangularprism
             _update();
         }
 
-        public triangularprism (double _base, double height, double length)
+        public Triangularprism (double _base, double height, double length)
         {
             this._base = _base;
             this._h = height;
@@ -71,7 +71,7 @@ namespace triangularprism
         }
 
         // empty constructors
-        public triangularprism () {this._shape = "Triangular Prism";}
+        public Triangularprism () {this._shape = "Triangular Prism";}
 
         // methods
         private void _update()

@@ -4,7 +4,7 @@ using shape3d;
 
 namespace torus
 {
-    class torus : Shape3d
+    class Torus : Shape3d
     {
         // variables
         // calculated
@@ -17,7 +17,7 @@ namespace torus
         private double _minorradius;
 
         // constructors
-        public torus (double major, double minor, Color color){
+        public Torus (double major, double minor, Color color){
             this._majorradius = major;
             this._minorradius = minor;
             this._color = color;
@@ -25,7 +25,7 @@ namespace torus
             _update();
         }
 
-        public torus (double major, double minor){
+        public Torus (double major, double minor){
             this._majorradius = major;
             this._minorradius = minor;
             this._color = presets.Blue;
@@ -34,7 +34,7 @@ namespace torus
         }
 
         // empty constructor
-        public torus () {this._shape = "Torus";}
+        public Torus () {this._shape = "Torus";}
 
         // methods
         private void _calcvolume(){

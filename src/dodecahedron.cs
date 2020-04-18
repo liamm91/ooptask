@@ -5,7 +5,7 @@ using color;
 namespace dodecahedron
 {
 
-    class dodecahedron : Shape3d
+    class Dodecahedron : Shape3d
     {
         // variables
         // calculated
@@ -16,7 +16,7 @@ namespace dodecahedron
         private double _edgelength;
 
         // constructors
-        public dodecahedron (double edge, Color color)
+        public Dodecahedron (double edge, Color color)
         {
             this._edgelength = edge;
             this._color = color;
@@ -24,7 +24,7 @@ namespace dodecahedron
             _update();
         }
 
-        public dodecahedron (double edge)
+        public Dodecahedron (double edge)
         {
             this._edgelength = edge;
             this._color = presets.Red;
@@ -33,7 +33,7 @@ namespace dodecahedron
         }
 
         // empty constructors
-        public dodecahedron () {this._shape = "Dodecahedron";}
+        public Dodecahedron () {this._shape = "Dodecahedron";}
 
         // methods
         private void _update()
