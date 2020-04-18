@@ -4,7 +4,6 @@ using color;
 
 namespace dodecahedron
 {
-
     class Dodecahedron : Shape3d
     {
         // variables
