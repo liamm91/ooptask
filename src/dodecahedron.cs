@@ -38,6 +38,7 @@ namespace dodecahedron
         // methods
         private void _update()
         {
+            _validate();
             _calcsurfacearea();
             _calcvolume();
         }
@@ -58,6 +59,13 @@ namespace dodecahedron
             Console.WriteLine("This dodecahedron has a color of {0}", this._color);
             Console.WriteLine("The surface area of the dodecahedron is {0}", this._surfacearea);
             Console.WriteLine("The volume of the dodecahedron is {0}", this._volume);
+        }
+
+        private void _validate()
+        {
+            if (this._edgelength <= 0){
+                throw new ArgumentException("The edge length of the dodecahedron cannot be less than or be 0");
+            }
         }
         
         // getters and setters
