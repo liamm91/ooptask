@@ -56,14 +56,14 @@ namespace triangularprism
         }
 
         // all forumulas from google
-        private double descriminant() => Math.Sqrt((-1 * Math.Pow(this._a, 4))+(2 * Math.Pow(this._a * this._b, 2))+(2 * Math.Pow(this._a * this._c, 2))+((-1 * Math.Pow(this._b, 4)))+(2 * Math.Pow(this._b * this._c, 2))+((-1 * Math.Pow(this._c, 4))));
+        private double descriminant() => Math.Sqrt((-1 * Math.Pow(this._a, 4))+(2 * Math.Pow((this._a * this._b), 2))+(2 * Math.Pow((this._a * this._c), 2))+((-1 * Math.Pow(this._b, 4)))+(2 * Math.Pow((this._b * this._c), 2))+((-1 * Math.Pow(this._c, 4))));
         private void _calcvolume()
         {
-            this._volume = ((1/4) * this._h) * descriminant();
+            this._volume = ((0.25) * this._h) * descriminant();
         }
         private void _calcsurfacearea()
         {
-            this._surfacearea = (this._h * (this._a + this._b + this._c)) * (1/2) * descriminant();
+            this._surfacearea = (this._h * (this._a + this._b + this._c)) * 0.50 * descriminant();
         }
         private void _calclatsurfacearea()
         {
