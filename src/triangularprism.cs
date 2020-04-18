@@ -10,7 +10,6 @@ namespace triangularprism
         // calculated
         private double _volume;
         private double _surfacearea;
-        private double _basearea;
         private double _latsurfacearea;
 
         // given
@@ -142,7 +141,6 @@ namespace triangularprism
         // getters and setters
         public double volume {get => this._volume;}
         public double surfacearea {get => this._surfacearea;}
-        public double basearea {get => this._basearea;}
         public double lateralsurfacearea {get => this._latsurfacearea;}
         public override String shape {get => this._shape;}
         public double prismbase 
