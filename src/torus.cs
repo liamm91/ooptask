@@ -58,6 +58,15 @@ namespace torus
             _detratio();
         }
 
+        public void draw(){
+            Console.WriteLine("This is a {0}", this._shape);
+            Console.WriteLine("This torus has a color of {0}", this._color);
+            Console.WriteLine("The major radius is {0} and the minor radius is {1}", this._majorradius, this._minorradius);
+            Console.WriteLine("The surface area of the torus is {0}", this._surfacearea);
+            Console.WriteLine("The volume of the torus is {0}", this._volume);
+            Console.WriteLine("The aspect ratio of the torus is {0}:1", this._aspectratio);
+        }
+
         // getters / setters
         public double major
         {
@@ -89,14 +98,5 @@ namespace torus
 
         public double volume {get => this._volume;}
         public double surfacearea {get => this._surfacearea;}
-
-        public void draw(){
-            Console.WriteLine("This is a {0}", this._shape);
-            Console.WriteLine("This torus has a color of {0}", this._color);
-            Console.WriteLine("The major radius is {0} and the minor radius is {1}", this._majorradius, this._minorradius);
-            Console.WriteLine("The surface area of the torus is {0}", this._surfacearea);
-            Console.WriteLine("The volume of the torus is {0}", this._volume);
-            Console.WriteLine("The aspect ratio of the torus is {0}:1", this._aspectratio);
-        }
     }
 }
