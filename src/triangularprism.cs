@@ -22,6 +22,8 @@ namespace triangularprism
 
 
         // constructors
+        // using _base because base is a keyword/function
+        // some constructors have additional methods to calculate the other sides of the prism for further calculation
         public triangularprism (double _base, double b, double c, double length, Color color)
         {
             this._base = _base;
@@ -46,7 +48,6 @@ namespace triangularprism
             _update();
         }
 
-        // using _base because base is a keyword/function
         public triangularprism (double _base, double height, double length, Color color)
         {
             this._base = _base;
