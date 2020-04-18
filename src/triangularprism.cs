@@ -79,12 +79,8 @@ namespace triangularprism
             _detshape();
             _calcvolume();
             _calcsurfacearea();
-            _calcbasearea();
             _calclatsurfacearea();
         }
-
-        // reoccuring function within the calculations of a triangular prism
-        private double _descriminant => Math.Sqrt((-1 * Math.Pow(this._base, 4)) + (2 * Math.Pow((this._base * this._b), 2)) + (2 * Math.Pow((this._base * this._c), 2)) + (-1 * Math.Pow(this._b, 4) + (2 * Math.Pow((this._b * this._c), 2)) + (-1 * Math.Pow(this._c, 4))));
 
         private void _calcvolume()
         {
@@ -94,10 +90,6 @@ namespace triangularprism
         {
             double s = Math.Sqrt((Math.Pow(this._base / 2, 2))+(Math.Pow(this._h, 2)));
             this._surfacearea = (this._base * (this._h + this._l)) + (2 * this._l * s);
-        }
-        private void _calcbasearea()
-        {
-            this._basearea = (1/4) * _descriminant;
         }
         private void _calclatsurfacearea()
         {
@@ -134,6 +126,15 @@ namespace triangularprism
             } else if (this._l <= 0){
                 throw new ArgumentException("The base of the prism cannot be less than or be 0");
             }
+        }
+
+        public void draw()
+        {
+            Console.WriteLine("This is a {0}", this._shape);
+            Console.WriteLine("This prism has a color of {0}", this._color);
+            Console.WriteLine("The surface area of the prism is {0}", this._surfacearea);
+            Console.WriteLine("The volume of the prism is {0}", this._volume);
+            Console.WriteLine("The lateral surface area of the prism is {0}", this._latsurfacearea);
         }
         
         // getters and setters
