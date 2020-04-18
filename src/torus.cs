@@ -71,7 +71,7 @@ namespace torus
         {
             if (this._majorradius == 0){
                 throw new ArgumentException("The major radius cannot be 0");
-            } else if (this._majorradius == 0){
+            } else if (this._minorradius == 0){
                 throw new ArgumentException("The minor radius cannot be 0");
             }
         }
