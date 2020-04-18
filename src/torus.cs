@@ -34,7 +34,7 @@ namespace torus
         }
 
         // empty constructor
-        public torus () {}
+        public torus () {this._shape = "Torus";}
 
         // methods
         private void _calcvolume(){
