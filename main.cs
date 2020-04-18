@@ -4,6 +4,7 @@ using torus;
 using triangularprism;
 using dodecahedron;
 using System.Collections;
+using vector3;
 
 namespace computer_science_12
 {
@@ -15,16 +16,16 @@ namespace computer_science_12
             Shape3d basic = new Shape3d();
 
             // tori
-            Torus torus1 = new Torus(10, 5);
+            Torus torus1 = new Torus(10, 5, new Vector3(25, 2, -3));
             Torus torus2 = new Torus(5, 5);
             Torus torus3 = new Torus(5, 10);
 
             // dodecahedron
-            Dodecahedron dodeceda = new Dodecahedron(15);
+            Dodecahedron dodeceda = new Dodecahedron(15, new Vector3(420, 420, 420));
 
             // triangular prism
             Triangularprism prism1 = new Triangularprism(10, 9, 5, 25);
-            Triangularprism prism2 = new Triangularprism(3, 3, 3, 25);
+            Triangularprism prism2 = new Triangularprism(3, 3, 3, 25, new Vector3(1, 2, 3));
             
             // show casing them, does not give any errors
             ArrayList shapesList = new ArrayList();
