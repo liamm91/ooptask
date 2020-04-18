@@ -3,7 +3,7 @@ using System;
 namespace color
 {
     // preset colors
-    public class preset : Color
+    public class presets : Color
     {
         public static Color Red {get => new Color (255, 0, 0);}
         public static Color Green = new Color (0, 255, 0);
