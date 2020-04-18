@@ -2,16 +2,16 @@ using System;
 
 namespace color
 {
+    // preset colors
+    class preset 
+    {
+        public Color red = new Color (255, 0, 0);
+        public Color green = new Color (0, 255, 0);
+        public Color blue = new Color (0, 0, 255);
+    }
+
     public class Color
     {
-        // preset colors
-        class preset 
-        {
-            public Color red = new Color (255, 0, 0);
-            public Color green = new Color (0, 255, 0);
-            public Color blue = new Color (0, 0, 255);
-        }
-
         // instance variables
         protected int _red;
         protected int _green;
