@@ -25,6 +25,14 @@ namespace torus
             _update();
         }
 
+        public torus (double major, double minor){
+            this._majorradius = major;
+            this._minorradius = minor;
+            this._color = presets.Blue;
+
+            _update();
+        }
+
         // empty constructor
         public torus () {}
 
