@@ -60,10 +60,20 @@ namespace torus
         }
 
         private void _update(){
+            _validate();
             _calcvolume();
             _calcsurfacearea();
             _detshape();
             _detratio();
+        }
+
+        private void _validate()
+        {
+            if (this._majorradius == 0){
+                throw new ArgumentException("The major radius cannot be 0");
+            } else if (this._majorradius == 0){
+                throw new ArgumentException("The minor radius cannot be 0");
+            }
         }
 
         public void draw(){
