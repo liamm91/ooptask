@@ -3,11 +3,11 @@ using System;
 namespace color
 {
     // preset colors
-    class preset 
+    public class preset : Color
     {
-        public Color red = new Color (255, 0, 0);
-        public Color green = new Color (0, 255, 0);
-        public Color blue = new Color (0, 0, 255);
+        public static Color Red {get => new Color (255, 0, 0);}
+        public static Color Green = new Color (0, 255, 0);
+        public static Color Blue = new Color (0, 0, 255);
     }
 
     public class Color
