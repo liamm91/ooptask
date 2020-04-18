@@ -20,6 +20,7 @@ namespace dodecahedron
         {
             this._edgelength = edge;
             this._color = color;
+            this._shape = "Dodecahedron";
             _update();
         }
 
@@ -27,11 +28,12 @@ namespace dodecahedron
         {
             this._edgelength = edge;
             this._color = presets.Red;
+            this._shape = "Dodecahedron";
             _update();
         }
 
         // empty constructors
-        public dodecahedron () {}
+        public dodecahedron () {this._shape = "Dodecahedron";}
 
         // methods
         private void _update()
@@ -61,7 +63,7 @@ namespace dodecahedron
         // getters and setters
         public double volume {get => this._volume;}
         public double surfacearea {get => this._surfacearea;}
-        public override String shape {get => "Dodecahedron";}
+        public override String shape {get => this._shape;}
         public double edge_length
         {
             get
