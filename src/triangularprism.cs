@@ -1,6 +1,7 @@
 using System;
 using shape3d;
 using color;
+using vector3;
 
 namespace triangularprism
 {
@@ -25,7 +26,32 @@ namespace triangularprism
             this._c = c;
             this._h = height;
             this._color = color;
+            this._position = new Vector3(0, 0, 0);
 
+            _update();
+        }
+
+        public Triangularprism (double a, double b, double c, double height, Color color, Vector3 origin)
+        {
+            this._a = a;
+            this._b = b;
+            this._c = c;
+            this._h = height;
+            this._color = color;
+            this._position = origin;
+
+            _update();
+        }
+
+        public Triangularprism (double a, double b, double c, double height, Vector3 origin)
+        {
+            this._a = a;
+            this._b = b;
+            this._c = c;
+            this._h = height;
+            this._color = presets.Green;
+            this._position = origin;
+            
             _update();
         }
 
@@ -36,6 +62,7 @@ namespace triangularprism
             this._c = c;
             this._h = height;
             this._color = presets.Green;
+            this._position = new Vector3(0, 0, 0);
             
             _update();
         }
@@ -101,7 +128,7 @@ namespace triangularprism
 
         public override void draw()
         {
-            Console.WriteLine("This is a {0}", this._shape);
+            Console.WriteLine("This is a {0} located at {1}", this._shape, this._position);
             Console.WriteLine("This prism has a color of {0}", this._color);
             Console.WriteLine("This prism has a base of height {0}", this._a);
             Console.WriteLine("The surface area of the prism is {0:0.00}", this._surfacearea);

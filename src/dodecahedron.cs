@@ -1,6 +1,7 @@
 using System;
 using shape3d;
 using color;
+using vector3;
 
 namespace dodecahedron
 {
@@ -16,6 +17,8 @@ namespace dodecahedron
             this._edgelength = edge;
             this._color = color;
             this._shape = "Dodecahedron";
+            this._position = new Vector3(0, 0, 0);
+
             _update();
         }
 
@@ -24,6 +27,27 @@ namespace dodecahedron
             this._edgelength = edge;
             this._color = presets.Red;
             this._shape = "Dodecahedron";
+            this._position = new Vector3(0, 0, 0);
+
+            _update();
+        }
+
+        public Dodecahedron (double edge, Color color, Vector3 origin)
+        {
+            this._edgelength = edge;
+            this._color = color;
+            this._shape = "Dodecahedron";
+            this._position = origin;
+            
+            _update();
+        }
+
+        public Dodecahedron (double edge, Vector3 origin)
+        {
+            this._edgelength = edge;
+            this._color = presets.Red;
+            this._shape = "Dodecahedron";
+            this._position = origin;
             _update();
         }
 

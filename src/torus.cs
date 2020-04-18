@@ -1,6 +1,7 @@
 using System;
 using color;
 using shape3d;
+using vector3;
 
 namespace torus
 {
@@ -19,6 +20,7 @@ namespace torus
             this._majorradius = major;
             this._minorradius = minor;
             this._color = color;
+            this._position = new Vector3(0, 0, 0);
 
             _update();
         }
@@ -27,6 +29,25 @@ namespace torus
             this._majorradius = major;
             this._minorradius = minor;
             this._color = presets.Blue;
+            this._position = new Vector3(0, 0, 0);
+
+            _update();
+        }
+
+        public Torus (double major, double minor, Color color, Vector3 origin){
+            this._majorradius = major;
+            this._minorradius = minor;
+            this._color = color;
+            this._position = origin;
+
+            _update();
+        }
+
+        public Torus (double major, double minor, Vector3 origin){
+            this._majorradius = major;
+            this._minorradius = minor;
+            this._color = presets.Blue;
+            this._position = origin;
 
             _update();
         }
@@ -75,7 +96,7 @@ namespace torus
         }
 
         public override void draw(){
-            Console.WriteLine("This is a {0}", this._shape);
+            Console.WriteLine("This is a {0} located at {1}", this._shape, this._position);
             Console.WriteLine("This torus has a color of {0}", this._color);
             Console.WriteLine("The major radius is {0} and the minor radius is {1}", this._majorradius, this._minorradius);
             Console.WriteLine("The surface area of the torus is {0:0.00}", this._surfacearea);
