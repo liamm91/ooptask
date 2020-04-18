@@ -22,6 +22,7 @@ namespace computer_science_12
             // triangular prism
             Shape3d prism1 = new Triangularprism(10, 1, 5, 25);
             Shape3d prism2 = new Triangularprism(10, 25, 4);
+            Shape3d prism3 = new Triangularprism(3, 3, 3, 25);
             
             // show casing them
             ArrayList shapesList = new ArrayList();
@@ -31,6 +32,7 @@ namespace computer_science_12
             shapesList.Add(dodeceda);
             shapesList.Add(prism1);
             shapesList.Add(prism2);
+            shapesList.Add(prism3);
 
             foreach (Shape3d shape in shapesList)
             {
