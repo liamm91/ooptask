@@ -56,8 +56,9 @@ namespace dodecahedron
         {
             Console.WriteLine("This is a {0}", this._shape);
             Console.WriteLine("This dodecahedron has a color of {0}", this._color);
-            Console.WriteLine("The surface area of the dodecahedron is {0}", this._surfacearea);
-            Console.WriteLine("The volume of the dodecahedron is {0}", this._volume);
+            Console.WriteLine("This dodecahedron has an edge length of {0:0.00}", this._edgelength);
+            Console.WriteLine("The surface area of the dodecahedron is {0:0.00}", this._surfacearea);
+            Console.WriteLine("The volume of the dodecahedron is {0:0.00}", this._volume);
         }
 
         private void _validate()

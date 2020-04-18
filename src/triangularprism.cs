@@ -133,9 +133,10 @@ namespace triangularprism
         {
             Console.WriteLine("This is a {0}", this._shape);
             Console.WriteLine("This prism has a color of {0}", this._color);
-            Console.WriteLine("The surface area of the prism is {0}", this._surfacearea);
-            Console.WriteLine("The volume of the prism is {0}", this._volume);
-            Console.WriteLine("The lateral surface area of the prism is {0}", this._latsurfacearea);
+            Console.WriteLine("This prism has a base of length {0}", this._base);
+            Console.WriteLine("The surface area of the prism is {0:0.00}", this._surfacearea);
+            Console.WriteLine("The volume of the prism is {0:0.00}", this._volume);
+            Console.WriteLine("The lateral surface area of the prism is {0:0.00}", this._latsurfacearea);
         }
         
         // getters and setters
