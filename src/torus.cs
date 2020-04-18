@@ -103,7 +103,6 @@ namespace torus
         }
 
         public override String shape {get => this._shape;}
-
         public double volume {get => this._volume;}
         public double surfacearea {get => this._surfacearea;}
     }
