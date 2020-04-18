@@ -13,59 +13,32 @@ namespace triangularprism
         private double _latsurfacearea;
 
         // given
-        private double _base; // a is the base of the prism
+        private double _a; // a is the base of the prism
         private double _b; // lateral side
         private double _c; // lateral side
-        private double _l; // length
         private double _h; // height relative to a
 
 
         // constructors
-        // using _base because base is a keyword/function
-        // some constructors have additional methods to calculate the other sides of the prism for further calculation
-        public Triangularprism (double _base, double b, double c, double length, Color color)
+        public Triangularprism (double a, double b, double c, double height, Color color)
         {
-            this._base = _base;
+            this._a = a;
             this._b = b;
             this._c = c;
-            this._l = length;
+            this._h = height;
             this._color = color;
 
-            _calcheight();
             _update();
         }
 
-        public Triangularprism (double _base, double b, double c, double length)
+        public Triangularprism (double a, double b, double c, double height)
         {
-            this._base = _base;
+            this._a = a;
             this._b = b;
             this._c = c;
-            this._l = length;
+            this._h = height;
             this._color = presets.Green;
             
-            _calcheight();
-            _update();
-        }
-
-        public Triangularprism (double _base, double height, double length, Color color)
-        {
-            this._base = _base;
-            this._h = height;
-            this._l = length;
-            this._color = color;
-
-            _calcothersides();
-            _update();
-        }
-
-        public Triangularprism (double _base, double height, double length)
-        {
-            this._base = _base;
-            this._h = height;
-            this._l = length;
-            this._color = presets.Green;
-
-            _calcothersides();
             _update();
         }
 
@@ -82,31 +55,23 @@ namespace triangularprism
             _calclatsurfacearea();
         }
 
+        // all forumulas from google
+        private double descriminant() => Math.Sqrt((-1 * Math.Pow(this._a, 4))+(2 * Math.Pow(this._a * this._b, 2))+(2 * Math.Pow(this._a * this._c, 2))+((-1 * Math.Pow(this._b, 4)))+(2 * Math.Pow(this._b * this._c, 2))+((-1 * Math.Pow(this._c, 4))));
         private void _calcvolume()
         {
-            this._volume = (1/2) * this._base * this._h * this._l;
+            this._volume = ((1/4) * this._h) * descriminant();
         }
         private void _calcsurfacearea()
         {
-            double s = Math.Sqrt((Math.Pow(this._base / 2, 2))+(Math.Pow(this._h, 2)));
-            this._surfacearea = (this._base * (this._h + this._l)) + (2 * this._l * s);
+            this._surfacearea = (this._h * (this._a + this._b + this._c)) * (1/2) * descriminant();
         }
         private void _calclatsurfacearea()
         {
-            this._latsurfacearea = (this._base + this._b + this._c) * this._h;
-        }
-        private void _calcheight()
-        {
-            double s = (this._base + this._b + this._c) / 2;
-            this._h = (2 / this._base) * Math.Sqrt(s * (s - this._base) *  (s - this._b) * (s - this._c));
-        }
-        private void _calcothersides()
-        {
-            this._b = this._c = Math.Sqrt((Math.Pow(this._base / 2, 2))+(Math.Pow(this._h, 2)));
+            this._latsurfacearea = (this._a + this._b + this._c) * this._h;
         }
         private void _detshape()
         {
-            if (this._base == this._b && this._b == this._c && this._c == this._base)
+            if (this._a == this._b && this._b == this._c && this._c == this._a)
             {
                 this._shape = "Equilateral Triangular Prism";
             } else if (this._b == this._c){
@@ -115,16 +80,24 @@ namespace triangularprism
                 this._shape = "Scalene Triangular Prism";
             }
         }
+
+        // constraint (b + c) > a
+        // constraint (a + c) > b
+        // constraint (a + b) > c
         private void _validate()
         {
-            if (this._base <= 0) {
+            if (this._a <= 0) {
                 throw new ArgumentException("The base of the prism cannot be less than or be 0");
             } else if (this._b <= 0 || this._c <= 0){
                 throw new ArgumentException("The side of the prism cannot be less than or be 0");
             } else if (this._h <= 0){
                 throw new ArgumentException("The height of the prism cannot be less than or be 0");
-            } else if (this._l <= 0){
-                throw new ArgumentException("The base of the prism cannot be less than or be 0");
+            } else if ((this._b + this._c) <= this._a){
+                throw new ArgumentException("(b + c) > a");
+            } else if ((this._a + this._c) <= this._b){
+                throw new ArgumentException("(a + c) > b");
+            } else if ((this._a + this._b) <= this._c){
+                throw new ArgumentException("(a + b) > c");
             }
         }
 
@@ -132,7 +105,7 @@ namespace triangularprism
         {
             Console.WriteLine("This is a {0}", this._shape);
             Console.WriteLine("This prism has a color of {0}", this._color);
-            Console.WriteLine("This prism has a base of length {0}", this._base);
+            Console.WriteLine("This prism has a base of height {0}", this._a);
             Console.WriteLine("The surface area of the prism is {0:0.00}", this._surfacearea);
             Console.WriteLine("The volume of the prism is {0:0.00}", this._volume);
             Console.WriteLine("The lateral surface area of the prism is {0:0.00}", this._latsurfacearea);
@@ -147,11 +120,11 @@ namespace triangularprism
         {
             get
             {
-                return this._base;
+                return this._a;
             }
             set
             {
-                this._base = value;
+                this._a = value;
                 _update();
             }
         }
@@ -188,18 +161,6 @@ namespace triangularprism
             set
             {
                 this._h = value;
-                _update();
-            }
-        }
-        public double length 
-        {
-            get
-            {
-                return this._l;
-            }
-            set
-            {
-                this._l = value;
                 _update();
             }
         }
