@@ -35,6 +35,7 @@ namespace computer_science_12
             foreach (Shape3d shape in shapesList)
             {
                 shape.draw();
+                Console.WriteLine("");
             }
         }
     }
